@@ -1,0 +1,55 @@
+@import "../variables.scss";
+
+.card {
+  background-color: $w;
+  padding: 24px;
+
+  border-radius: 24px;
+  font-size: 18px;
+  font-weight: 400;
+  width: 100%;
+  max-width: 427px;
+  max-height: 293px;
+  height: 293px;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    border-radius: 18px;
+    justify-content: space-between;
+
+    .top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 30px;
+
+      span {
+        color: $grey;
+        font-size: 14px;
+      }
+    }
+
+    .bottom {
+      display: flex;
+      flex-direction: column;
+
+      max-width: 380px;
+      color: $dark;
+      align-items: flex-start;
+      gap: 10px;
+
+      h3 {
+        font-size: 22px;
+        font-weight: 500;
+        color: $dark;
+      }
+
+      h4 {
+        font-size: 16px;
+        font-weight: 400;
+        color: $grey;
+      }
+    }
+  }
+}

@@ -1,0 +1,113 @@
+@use "../variables" as *;
+
+#about {
+  background-color: #f2f5f0;
+  padding: 80px 0;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+
+    @media (max-width: $tablet) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .about__content {
+    max-width: 640px;
+
+    .title {
+      font-size: 36px;
+      font-weight: 700;
+      color: $black;
+      margin-bottom: 20px;
+
+      .green {
+        color: $green;
+      }
+
+      @media (max-width: $tablet) {
+        font-size: 30px;
+      }
+
+      @media (max-width: $mobile) {
+        font-size: 24px;
+      }
+    }
+
+    .description {
+      color: $grey;
+      font-size: 18px;
+      font-weight: 400;
+      margin-bottom: 20px;
+      line-height: 1.6;
+
+      @media (max-width: $tablet) {
+        font-size: 16px;
+      }
+
+      @media (max-width: $mobile) {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .about__image {
+    img {
+      max-width: 100%;
+      border-radius: 15px;
+
+      @media (max-width: $tablet) {
+        margin-top: 20px;
+      }
+    }
+  }
+
+  .about__badge {
+    background-color: $green;
+    border-radius: 14px;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+
+    .badge__text {
+      color: $w;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 10px;
+
+      @media (max-width: $tablet) {
+        font-size: 18px;
+      }
+
+      @media (max-width: $mobile) {
+        font-size: 16px;
+      }
+    }
+
+    .subtext {
+      color: $w;
+      font-size: 16px;
+
+      @media (max-width: $tablet) {
+        font-size: 14px;
+      }
+    }
+
+    .badge__logo {
+      margin-top: 20px;
+
+      img {
+        max-width: 150px;
+        height: auto;
+
+        @media (max-width: $mobile) {
+          max-width: 120px;
+        }
+      }
+    }
+  }
+}

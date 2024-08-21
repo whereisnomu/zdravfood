@@ -146,7 +146,7 @@
 
   .main__image {
     display: flex;
-    align-self: baseline;
+    align-self: normal;
 
     max-height: 100%;
     height: auto;
@@ -156,7 +156,7 @@
     @media (max-width: $notebooks) {
       width: 100%;
       position: relative;
-      top: -10px;
+      // top: -10px;
     }
 
     img {
@@ -165,7 +165,7 @@
       width: auto; // Сохраняет пропорции изображения
 
       @media (max-width: $lscreen) {
-        margin-bottom: 20px;
+        //   margin-bottom: 20px;
       }
 
       @media (max-width: $notebooks) {

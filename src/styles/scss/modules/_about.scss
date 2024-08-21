@@ -2,22 +2,44 @@
 
 #about {
   background-color: #f2f5f0;
-  padding: 80px 0;
+  padding: 100px 80px;
+
+  @media (max-width: $sxga) {
+    padding: 100px 40px;
+  }
+
+  @media (max-width: $notebooks) {
+    padding: 60px 40px;
+  }
+
+  @media (max-width: $tablet) {
+    padding: 60px 12px;
+  }
 
   .container {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     position: relative;
+    gap: 40px;
 
-    @media (max-width: $tablet) {
+    @media (max-width: $lscreen) {
       flex-direction: column;
       align-items: center;
+    }
+
+    @media (max-width: $notebooks) {
+      gap: 15px;
     }
   }
 
   .about__content {
     max-width: 640px;
+    flex: 1 2 75%;
+
+    @media (max-width: $tablet) {
+      max-width: unset;
+    }
 
     .title {
       font-size: 36px;
@@ -31,10 +53,16 @@
 
       @media (max-width: $tablet) {
         font-size: 30px;
+        display: flex;
+        flex-direction: column;
       }
 
       @media (max-width: $mobile) {
         font-size: 24px;
+      }
+
+      @media (max-width: 350px) {
+        font-size: 22px;
       }
     }
 
@@ -42,45 +70,168 @@
       color: $grey;
       font-size: 18px;
       font-weight: 400;
-      margin-bottom: 20px;
-      line-height: 1.6;
-
-      @media (max-width: $tablet) {
-        font-size: 16px;
-      }
+      margin-bottom: 5px;
+      line-height: 1.39;
 
       @media (max-width: $mobile) {
-        font-size: 14px;
+        font-size: 15px;
       }
     }
   }
 
   .about__image {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .badge {
+      background-color: $w;
+      border-radius: 10px;
+
+      position: absolute;
+      bottom: 30px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 24px;
+      max-width: 570px;
+
+      .text {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        span {
+          font-size: 22px;
+          font-weight: 600;
+          color: $black;
+
+          @media (max-width: $mobile) {
+            font-size: 18px;
+          }
+        }
+
+        h5 {
+          font-weight: 400;
+          font-size: 16px;
+          color: $grey;
+
+          @media (max-width: $mobile) {
+            font-size: 14px;
+          }
+        }
+      }
+
+      .img {
+        @media (max-width: $tablet) {
+          display: none;
+        }
+      }
+    }
     img {
       max-width: 100%;
       border-radius: 15px;
-
-      @media (max-width: $tablet) {
-        margin-top: 20px;
-      }
+      height: 100%; // Растягивает изображение на всю высоту контейнера
+      width: auto; // Сохраняет пропорции
+      object-fit: cover;
     }
   }
 
   .about__badge {
     background-color: $green;
     border-radius: 14px;
-    padding: 20px;
-    text-align: center;
+    //  padding: 24px 24px 24px 0;
+    //  text-align: center;
     margin-top: 40px;
+    display: flex;
+    position: relative;
+    border-radius: 20px;
+
+    @media (max-width: $tablet) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .union {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @media (max-width: $tablet) {
+        flex-direction: column;
+      }
+
+      .regular {
+        align-self: flex-start;
+        height: 100%;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+
+        @media (max-width: $tablet) {
+          display: none;
+        }
+      }
+
+      .text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: start;
+        padding: 12px 20px;
+        max-width: 280px;
+
+        @media (max-width: $tablet) {
+          max-width: unset;
+        }
+      }
+    }
+
+    .bags {
+      position: absolute;
+      right: 0;
+      top: -32px;
+
+      @media (max-width: $tablet) {
+        position: relative;
+        right: unset;
+        top: unset;
+        max-width: 300px;
+      }
+    }
+
+    .mobile {
+      display: none;
+
+      @media (max-width: $tablet) {
+        display: flex;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        width: 100%;
+      }
+    }
 
     .badge__text {
       color: $w;
-      font-size: 20px;
-      font-weight: 600;
-      margin-bottom: 10px;
+      font-size: 22px;
+      font-weight: 500;
+      margin-bottom: 5px;
+
+      br {
+        display: none;
+      }
 
       @media (max-width: $tablet) {
         font-size: 18px;
+
+        font-size: 22px;
+        font-weight: 600;
+
+        br {
+          display: block;
+        }
       }
 
       @media (max-width: $mobile) {
@@ -90,23 +241,12 @@
 
     .subtext {
       color: $w;
-      font-size: 16px;
+      opacity: 0.8;
+      font-size: 14px;
 
       @media (max-width: $tablet) {
         font-size: 14px;
-      }
-    }
-
-    .badge__logo {
-      margin-top: 20px;
-
-      img {
-        max-width: 150px;
-        height: auto;
-
-        @media (max-width: $mobile) {
-          max-width: 120px;
-        }
+        max-width: 260px;
       }
     }
   }

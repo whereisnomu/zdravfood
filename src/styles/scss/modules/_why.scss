@@ -1,0 +1,178 @@
+@use "../variables" as *;
+
+#why {
+  background-color: #f2f5f0;
+  padding: 0 80px 100px;
+
+  @media (max-width: $sxga) {
+    padding: 0 40px 100px;
+  }
+
+  @media (max-width: $notebooks) {
+    padding: 0 40px 60px;
+  }
+
+  @media (max-width: $tablet) {
+    padding: 0 12px 60px;
+  }
+
+  .container {
+    max-width: unset;
+    margin: unset;
+  }
+
+  .why__content {
+    h2.title {
+      font-size: 36px;
+      font-weight: 700;
+      color: $black;
+      margin-bottom: 40px;
+      text-align: left;
+      max-width: 550px;
+
+      .green {
+        color: $green;
+      }
+
+      @media (max-width: $tablet) {
+        font-size: 30px;
+        display: flex;
+        margin-bottom: 30px;
+        flex-direction: column;
+      }
+
+      @media (max-width: $mobile) {
+        font-size: 24px;
+      }
+
+      @media (max-width: 350px) {
+        font-size: 22px;
+      }
+    }
+  }
+
+  .why__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+
+    @media (max-width: $lscreen) {
+      align-items: center;
+      justify-content: center;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: $tablet) {
+      grid-template-columns: 1fr;
+    }
+
+    .why__item {
+      background-color: $w;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      text-align: left;
+      position: relative;
+      max-width: 305px;
+      width: 100%;
+      justify-content: space-between;
+
+      @media (max-width: $lscreen) {
+        max-width: unset;
+        max-height: 530px;
+        height: 100%;
+      }
+
+      @media (max-width: $tablet) {
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      @media (max-width: $mobile) {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 12px;
+        padding: 20px;
+
+        .text {
+          span {
+            display: none;
+          }
+        }
+      }
+
+      img {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 20px;
+
+        @media (max-width: $mobile) {
+          width: 48px;
+          height: 48px;
+          margin-bottom: unset;
+        }
+      }
+
+      .text {
+        h3.title {
+          font-size: 18px;
+          font-weight: 400;
+          color: $black;
+          margin-bottom: 24px;
+          text-align: left;
+          line-height: 1.1;
+          max-width: 220px;
+
+          @media (max-width: $mobile) {
+            margin-bottom: unset;
+            font-size: 16px;
+          }
+        }
+
+        span.number {
+          font-size: 14px;
+          color: $grey;
+          position: absolute;
+          font-weight: 400;
+          opacity: 0.6;
+          bottom: 30px;
+          right: 30px;
+        }
+      }
+    }
+  }
+
+  .why__cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    .btn {
+      padding: 15px 30px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      max-width: 415px;
+      width: 100%;
+
+      @media (max-width: $mobile) {
+        max-width: 480px;
+      }
+
+      &.red {
+        background-color: $red;
+        color: $w;
+        border: none;
+
+        &:hover {
+          background-color: darken($red, 10%);
+        }
+      }
+    }
+  }
+}

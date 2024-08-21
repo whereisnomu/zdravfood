@@ -167,6 +167,10 @@
         text-decoration: none;
         width: 100%;
         max-width: 189px;
+
+        &:hover {
+          background-color: darken($red, 10%);
+        }
       }
 
       .header__socials {

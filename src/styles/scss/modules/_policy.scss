@@ -1,0 +1,108 @@
+@use "../variables" as *;
+
+#policy {
+  padding: 40px 80px 100px;
+  background-color: $w;
+
+  @media (max-width: $sxga) {
+    padding: 40px 40px 80px;
+  }
+
+  @media (max-width: $tablet) {
+    padding: 40px 20px 60px;
+  }
+
+  @media (max-width: $tablet) {
+    padding: 40px 12px 60px;
+  }
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+
+  .head {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+
+    h1 {
+      color: $black;
+      font-weight: 500;
+      font-size: 40px;
+      max-width: 700px;
+
+      @media (max-width: $notebooks) {
+        font-size: 36px;
+      }
+
+      @media (max-width: $tablet) {
+        font-size: 28px;
+      }
+
+      @media (max-width: $mobile) {
+        font-size: 22px;
+      }
+    }
+
+    .bracks {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 25px;
+      margin-bottom: 15px;
+
+      position: relative;
+
+      &:before {
+        content: "";
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background-color: $red;
+        border-radius: 50px;
+        left: 22%;
+      }
+
+      span {
+        font-size: 14px;
+        font-weight: 400;
+
+        &.red {
+          color: $red;
+        }
+      }
+    }
+  }
+
+  a {
+    width: 100%;
+    max-width: 400px;
+
+    button {
+      font-size: 16px;
+      color: $w;
+      background-color: $red;
+      padding: 16px 20px;
+      border-radius: 10px;
+      font-weight: 400;
+      width: 100%;
+      max-width: 400px;
+
+      @media (max-width: $tablet) {
+        font-size: 14px;
+      }
+    }
+  }
+
+  h2,
+  p {
+    font-size: 16px;
+    font-weight: 400;
+    color: $grey;
+    line-height: 1.3;
+  }
+}

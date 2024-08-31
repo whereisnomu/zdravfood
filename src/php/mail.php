@@ -6,7 +6,6 @@ set_error_handler("var_dump");
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-
 require_once './libs/PHPMailer/src/Exception.php';
 require_once './libs/PHPMailer/src/PHPMailer.php';
 require_once './libs/PHPMailer/src/SMTP.php';
@@ -14,17 +13,24 @@ require_once './libs/PHPMailer/src/SMTP.php';
 $mail = new PHPMailer;
 $mail->CharSet = 'UTF-8';
 
-
 $mail->isSMTP();
 $mail->SMTPAuth = true;
 $mail->SMTPDebug = 0;
 
-
-
-$mail->Host = 'ssl://smtp.mail.ru';
+$mail->Host = 'smtp.mail.ru';
 $mail->Port = 465;
-$mail->Username = 'tf-no-reply-bot@mail.ru';
-$mail->Password = 'VAUa90KXPg3huDgvFHnE';
+$mail->SMTPSecure = 'ssl'; // Включение SSL
+$mail->Username = 'ru.no-reply@mail.ru';
+$mail->Password = 'Tap3ZHcDsS4vywUTkS6y';
+
+// Игнорирование проблем с сертификатом SSL
+$mail->SMTPOptions = array(
+    'ssl' => array(
+        'verify_peer' => false,
+        'verify_peer_name' => false,
+        'allow_self_signed' => true
+    )
+);
 
 
 $name = $_POST['name'];
@@ -32,18 +38,18 @@ $phone = $_POST['phone'];
 $email = $_POST['email'];
 $city = $_POST['city'];
 
+$mail->setFrom('ru.no-reply@mail.ru', '
+temp noreply');
 
-$mail->setFrom('tf-no-reply-bot@mail.ru', 'tf-no-reply-bot');
+$mail->addAddress('ecomedsnab@mail.ru', 'Здрав&Фуд');
 
-$mail->addAddress('Sereda_lena_91@mail.ru', 'Елена');
 // $mail->AddCC('irinazuboreva@topfranchise.ru', 'Irina Zubareva');
 // $mail->AddCC('rezultat_logoped@mail.ru', 'Logoped Rezultat');
 
 
-$subject = "Новая заявка на франшизу! №". rand(100000, 999999); 
+$subject = "Новая заявка на франшизу (стать партнером) ! №". rand(100000, 999999); 
 
 $mail->Subject = $subject;
-
 
 
 
@@ -189,7 +195,7 @@ bgcolor="#ffffff"
                           padding: 0;
                         "
                       >
-                        На лендинге <a href="iqworld-fr.ru">iqworld-fr.ru</a> Вам была оставлена заявка
+                        На лендинге <a href="frutofood.ru">frutofood.ru</a> Вам была оставлена заявка на партнерство
                         <br />
                         Контакты заинтересованного лица: &nbsp; <br />
                       </p>
@@ -215,8 +221,8 @@ bgcolor="#ffffff"
                       >
                         Интересует:
                         <a
-                          href="https://topfranchise.ru/products/franshiza-iq-mir-semeynye-klassy-velikikh-otkrytiy/"
-                          >Франшиза «iQ Мир» — семейные классы великих открытий
+                          href="https://topfranchise.ru/products/franshiza-proizvodstva-naturalnykh-perekusov-zdrav-fud/"
+                          >Франшиза натуральных перекусов «Здрав&фуд»
                         </a>
                       </p>
                       <p
@@ -387,5 +393,11 @@ $mail->msgHTML($message);
 
 $mail->send();
 
-header("Location: ../thankyou.html")
+if (!$mail->send()) {
+  file_put_contents('error_log.txt', 'Mailer Error: ' . $mail->ErrorInfo . PHP_EOL, FILE_APPEND);
+  echo 'Mailer Error: ' . $mail->ErrorInfo;
+} else {
+  echo 'success';
+}
+// header("Location: ../thankyou.html");
 ?>

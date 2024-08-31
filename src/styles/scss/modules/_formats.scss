@@ -1,0 +1,215 @@
+@use "../variables" as *;
+#formats {
+  padding: 0 80px 100px;
+  background-color: $background;
+
+  @media (max-width: $sxga) {
+    padding: 0 40px 80px;
+  }
+
+  @media (max-width: $tablet) {
+    padding: 0 20px 60px;
+  }
+
+  @media (max-width: $mobile) {
+    padding: 0 12px 60px;
+  }
+
+  .formats__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  h2.title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 40px;
+
+    @media (max-width: $notebooks) {
+      text-align: center;
+      font-size: 32px;
+    }
+
+    @media (max-width: $tablet) {
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+
+    @media (max-width: $tablet) {
+      font-size: 24px;
+    }
+
+    &.green {
+      color: $green;
+    }
+
+    span {
+      color: $black;
+    }
+  }
+
+  .formats__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+    @media (max-width: $notebooks) {
+      flex-direction: column;
+      align-items: center;
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    @media (max-width: $mobile) {
+      gap: 10px;
+    }
+  }
+
+  .formats__card {
+    background-color: $w;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    //  padding: 0 30px 30px 30px;
+    text-align: left;
+    position: relative;
+
+    img.formats__header {
+      width: 100%;
+      height: auto;
+      border-radius: 10px 10px 0 0;
+      object-fit: cover;
+    }
+
+    .union {
+      padding: 30px;
+
+      @media (max-width: $mobile) {
+        padding: 20px;
+      }
+    }
+
+    h3 {
+      font-size: 22px;
+      color: $black;
+      font-weight: 500;
+      // margin: 15px 0;
+      margin-bottom: 10px;
+
+      @media (max-width: $mobile) {
+        font-size: 18px;
+        margin-bottom: 6px;
+      }
+    }
+
+    p {
+      font-size: 16px;
+      color: $grey;
+      margin-bottom: 24px;
+      max-width: 280px;
+
+      @media (max-width: $mobile) {
+        font-size: 14px;
+        margin-bottom: 18px;
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 50px;
+
+      @media (max-width: $mobile) {
+        margin-bottom: 30px;
+      }
+
+      li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+        font-size: 16px;
+        color: $grey;
+        font-weight: 400;
+
+        @media (max-width: $mobile) {
+          font-size: 14px;
+
+          h5 {
+            max-width: 130px;
+          }
+        }
+
+        span.line {
+          flex: 1;
+          border-bottom: 2px dotted $border;
+          margin: 0 10px -10px;
+        }
+
+        span {
+          color: $red;
+          font-weight: 400;
+        }
+      }
+    }
+
+    .formats__details {
+      display: flex;
+      justify-content: space-between;
+      background-color: $w;
+      // padding: 10px;
+      // border-radius: 5px;
+      margin-bottom: 10px;
+      gap: 10px;
+
+      @media (max-width: $mobile) {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .investment,
+      .payback {
+        font-size: 22px;
+        color: $green;
+        font-weight: 500;
+        padding: 20px 18px;
+        width: 100%;
+        max-width: 228px;
+        border-radius: 10px;
+        background-color: $background;
+
+        @media (max-width: $mobile) {
+          font-size: 18px;
+          max-width: unset;
+        }
+
+        span {
+          display: block;
+          font-size: 16px;
+          color: $grey;
+          font-weight: 400;
+        }
+      }
+    }
+
+    button.btn {
+      width: 100%;
+      padding: 14px 0;
+      background-color: $red;
+      color: $w;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+
+      @media (max-width: $mobile) {
+        font-size: 14px;
+      }
+
+      &:hover {
+        background-color: darken($red, 10%);
+      }
+    }
+  }
+}

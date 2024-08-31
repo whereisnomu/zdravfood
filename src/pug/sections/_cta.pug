@@ -1,0 +1,43 @@
+section#cta
+   .cta__wrapper
+      .union
+         .cta__form
+            h2.title Не упустите свой шанс начать&nbsp;
+               span.green прибыльный бизнес вместе с российским производителем!
+            p Присоединяйтесь к команде «Здрав&фуд» и начните зарабатывать на правильном перекусе уже сегодня! Свяжитесь с нами, чтобы получить подробную информацию о франшизе
+            
+            form(action="./php/mail.php", method="POST")
+               .inputs
+                  input(type="text" placeholder="Ваше имя" name="name")
+                  input(type="tel" placeholder="+7 (___) ___-__-__" name="phone").mask
+                  input(type="email" placeholder="Электронная почта" name="email")
+                  input(type="text" placeholder="Город" name="city")
+               button.btn(type="submit") Оставить заявку
+               label.label
+                  input(type="checkbox" required).checkbox
+                  span Нажимая на кнопку «Оставить заявку», вы соглашаетесь с нашей&nbsp;
+                     a(href="./policy.html") Политикой конфиденциальности
+         .cta__contacts
+            .contact
+               .img
+                  img(src="./img/cta/phone.png", alt="Телефон")
+               .info
+                  h5 Телефон
+                  a(href="tel:+79150401252")  +7 (915) 040-12-52
+            .contact
+               .img
+                  img(src="./img/cta/email.png", alt="Email")
+               .info
+                  h5 Электронная почта
+                  a(href="mailto:ecomedsnab@mail.ru") ecomedsnab@mail.ru  
+      .cta__info
+         img(src="./img/cta/line.png", alt="линия").iline
+         .wrapper
+            .text
+               h3 Здоровые перекусы «Здрав&фуд» — вкусный и полезный источник клетчатки, витаминов и минералов
+               img(src="./img/cta/logo.png", alt="лого" width=115 height=100)
+            .union
+               img(src="./img/cta/couple.png", alt="Здоровые перекусы", class="cta__image").couple
+               img(src="./img/cta/couple_mobile.png", alt="Здоровые перекусы", class="cta__image").couple.view
+            img(src="./img/cta/vector.svg", alt="вектор").vector
+

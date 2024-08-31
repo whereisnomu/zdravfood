@@ -3,12 +3,76 @@ html(lang="ru")
    head
       meta(charset="UTF-8")
       meta(name="viewport", content="width=device-width" )
-      link(rel='stylesheet', type='text/css' href='./js/libs/splide/dist/css/splide.min.css')
-      link(rel="shortcut icon", href="./img/aboutme/circle_logo.svg", type="image/x-icon")
+      //- link(rel='stylesheet', type='text/css' href='./js/libs/splide/dist/css/splide.min.css')
+      link(rel='stylesheet', href='https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.4/dist/css/splide.min.css')
+      link(rel="shortcut icon", href="./img/header/logo.svg", type="image/x-icon")
       link(rel="stylesheet", href="./css/style.css")
       title Франшиза производства натуральных перекусов «Здрав&фуд»
    body 
       include ../sections/index.pug
+
+      div(class='modal' id="thankYouModal")
+         .modal-content
+            span.close#closeThankYouModal
+               svg.closesvg(width='26', height='26', viewBox='0 0 26 26', xmlns='http://www.w3.org/2000/svg')
+                  path(d='M19.5 6.5L6.5 19.5', stroke-width='1.5', stroke-linecap='round', stroke-linejoin='round')
+                  path(d='M6.5 6.5L19.5 19.5', stroke-width='1.5', stroke-linecap='round', stroke-linejoin='round')
+
+            h3 Спасибо за вашу заявку!
+            p Мы свяжемся с вами в ближайшее время.
+
+
+      div(class='modal' id="modal")
+         .modal-content
+            span.close#closeModalBtn
+               svg.closesvg(width='26', height='26', viewBox='0 0 26 26', xmlns='http://www.w3.org/2000/svg')
+                  path(d='M19.5 6.5L6.5 19.5', stroke-width='1.5', stroke-linecap='round', stroke-linejoin='round')
+                  path(d='M6.5 6.5L19.5 19.5', stroke-width='1.5', stroke-linecap='round', stroke-linejoin='round')
+
+            .form 
+               form(action="./php/mail.php" method="POST")
+                  h3 Стать партнером
+                  h4 Присоединяйтесь к команде «Здрав&фуд» и начните зарабатывать на правильном перекусе уже сегодня! Свяжитесь с нами, чтобы получить подробную информацию о франшизе
+
+                  .inputs
+                     input(type="text" placeholder="Ваше имя" name="name" required)
+                     input(type="tel" placeholder="+ 7 (___) ___-___-__" name="phone" required).mask
+                     input(type="email" placeholder="Электронная почта" name="email" required)
+                     input(type="text" placeholder="Ваш город" name="city" required)
+
+                  label.label
+                     input(type="checkbox" required).checkbox
+                     span Нажимая на кнопку «Оставить заявку», вы соглашаетесь с нашей&nbsp;
+                        a(href="./policy.html") Политикой конфиденциальности
+
+                  button(type='submit').button.green Запишитесь на личную консультацию
+                     span.blick.light
+
+      div(class='modal' id="modal-business")
+         .modal-content
+            span.close#closeModalBtn
+               svg.closesvg(width='26', height='26', viewBox='0 0 26 26', xmlns='http://www.w3.org/2000/svg')
+                  path(d='M19.5 6.5L6.5 19.5', stroke-width='1.5', stroke-linecap='round', stroke-linejoin='round')
+                  path(d='M6.5 6.5L19.5 19.5', stroke-width='1.5', stroke-linecap='round', stroke-linejoin='round')
+
+            .form 
+               form(action="./php/mail-business.php" method="POST")
+                  h3 Получить бизнес-план
+                  h4 Присоединяйтесь к команде «Здрав&фуд» и начните зарабатывать на правильном перекусе уже сегодня! Свяжитесь с нами, чтобы получить подробную информацию о франшизе
+
+                  .inputs
+                     input(type="text" placeholder="Ваше имя" name="name" required)
+                     input(type="tel" placeholder="+ 7 (___) ___-___-__" name="phone" required).mask
+                     input(type="email" placeholder="Электронная почта" name="email" required)
+                     input(type="text" placeholder="Ваш город" name="city" required)
+
+                  label.label
+                     input(type="checkbox" required).checkbox
+                     span Нажимая на кнопку «Оставить заявку», вы соглашаетесь с нашей&nbsp;
+                        a(href="./policy.html") Политикой конфиденциальности
+                  button(type='submit').button.green Отправить
+                     span.blick.light
+
 
       script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
       integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
@@ -18,15 +82,15 @@ html(lang="ru")
       //- script(src="./js/libs/jquery.mask.min.js")
 
       script(src="./js/burger.js")
-
+      script(src="./js/accord.js")
       script(src="./js/modal.js")
-
-      script(src='./js/libs/splide/dist/js/splide.min.js')
-
-      script(src="./js/slider.js")
-
+      //- script(src="./js/thanks.js")
+      script(src="./js/libs/jquery.mask.min.js") 
+      //- script(src='./js/libs/splide/dist/js/splide.min.js')
+      script(src="./js/splide.js")
       script(src="./js/masks/input.js")
 
+      script(src='https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.4/dist/js/splide.min.js')
 
 
 

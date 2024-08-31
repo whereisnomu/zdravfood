@@ -1,0 +1,429 @@
+@use "../variables" as *;
+
+#cta {
+  padding: 0 80px 100px;
+
+  background-color: $background;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+
+  @media (max-width: $sxga) {
+    padding: 0 40px 80px;
+  }
+
+  @media (max-width: $tablet) {
+    padding: 0 20px 60px;
+  }
+
+  @media (max-width: $mobile) {
+    padding: 0 12px 60px;
+  }
+
+  .cta__wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1440px;
+
+    .union {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    @media (max-width: $notebooks) {
+      flex-direction: column;
+      align-items: center;
+
+      .union {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        @media (max-width: $notebooks) {
+          width: 100%;
+
+          .cta__form {
+            max-width: unset;
+            width: 100%;
+
+            .title {
+              max-width: 700px;
+            }
+
+            form {
+              .inputs {
+                input {
+                  max-width: unset;
+                }
+              }
+            }
+          }
+        }
+
+        @media (max-width: $tablet) {
+          gap: 10px;
+
+          .cta__form {
+            .title {
+              font-size: 20px;
+              line-height: 1.05;
+              max-width: 450px;
+            }
+          }
+        }
+
+        @media (max-width: $mobile) {
+          .cta__form {
+            padding: 20px;
+
+            form {
+              .inputs {
+                grid-template-columns: repeat(1, 1fr);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .cta__form {
+    flex: 1;
+  }
+  .cta__info {
+    flex: 1; // Добавляем flex-grow, чтобы оба блока растягивались одинаково
+    max-width: 600px;
+
+    @media (max-width: $notebooks) {
+      max-width: unset;
+      width: 100%;
+    }
+    // Устанавливаем одинаковую максимальную ширину
+  }
+
+  .cta__form {
+    background-color: $w;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 630px;
+    //  width: 100%;
+    //  width: 60%;
+
+    h2.title {
+      font-size: 32px;
+      font-weight: 500;
+      margin-bottom: 10px;
+      max-width: 550px;
+
+      span.green {
+        color: $green;
+      }
+
+      @media (max-width: $tablet) {
+        font-size: 24px;
+      }
+    }
+
+    p {
+      font-size: 16px;
+      color: $grey;
+      margin-bottom: 20px;
+      max-width: 570px;
+
+      @media (max-width: $tablet) {
+        font-size: 14px;
+      }
+    }
+
+    form {
+      display: flex;
+      // flex-wrap: wrap;
+      min-width: unset !important;
+      gap: 10px;
+
+      .inputs {
+        gap: 12px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+      }
+
+      input {
+        max-width: 280px;
+        width: 100%;
+        border-radius: 10px;
+        border: 1px solid $border;
+        color: $black;
+        font-size: 15px;
+        padding: 14px 20px;
+
+        &::placeholder {
+          font-size: 15px;
+          color: $black;
+        }
+
+        @media (max-width: $tablet) {
+          width: 100%;
+        }
+      }
+
+      button.btn {
+        width: 100%;
+        padding: 12px;
+        background-color: $red;
+        color: $w;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+
+        &:hover {
+          background-color: darken($red, 10%);
+        }
+      }
+
+      label.label {
+        font-size: 14px;
+        color: $grey;
+        display: flex;
+        //   margin-top: 10px;
+        max-width: 410px;
+
+        input.checkbox {
+          max-width: unset;
+          width: 22px;
+          margin-right: 10px;
+          border-radius: 20px;
+          border: unset;
+          color: $black;
+          font-size: unset;
+          padding: unset;
+        }
+
+        a {
+          color: $red;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .cta__contacts {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+
+    @media (max-width: $tablet) {
+      gap: 10px;
+      flex-direction: column;
+    }
+
+    .contact {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 16px 20px;
+      background: $w;
+      border: 1px solid $border;
+      font-size: 14px;
+      border-radius: 20px;
+      width: 100%;
+
+      a {
+        font-size: 16px;
+        color: $black;
+        font-weight: 500;
+
+        @media (max-width: $mobile) {
+          font-size: 15px;
+        }
+      }
+
+      h5 {
+        color: $grey;
+        font-weight: 400;
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+
+      img {
+        width: 50px;
+      }
+    }
+  }
+
+  .cta__info {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    //  justify-content: center;
+    //  width: 100%;
+    border-radius: 20px;
+
+    @media (max-width: $notebooks) {
+      flex: 1;
+    }
+
+    .iline {
+      max-width: 24px;
+      height: 100%;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+
+      @media (max-width: $notebooks) {
+        display: none;
+      }
+    }
+
+    .wrapper {
+      background-color: $green;
+      padding: 30px;
+      display: flex;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+
+      @media (max-width: $notebooks) {
+        border-radius: 20px;
+        align-items: flex-start;
+        max-height: 600px;
+        height: 600px;
+      }
+
+      @media (max-width: $mobile) {
+        flex-direction: column;
+        height: 450px;
+        padding: 20px;
+      }
+    }
+
+    .text {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      z-index: 100;
+
+      @media (max-width: $lscreen) {
+        justify-content: flex-start;
+      }
+
+      @media (max-width: $tablet) {
+        width: 100%;
+        text-align: left;
+
+        img {
+          width: 80px;
+          height: 72px;
+        }
+      }
+
+      @media (max-width: $mobile) {
+        flex-direction: column-reverse;
+
+        h3 {
+          max-width: 260px;
+        }
+
+        img {
+          width: 62px;
+          height: 54px;
+          margin-bottom: 12px;
+        }
+      }
+    }
+
+    .vector {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      // width: 100%;
+      z-index: 1;
+
+      @media (max-width: $notebooks) {
+        width: 100%;
+        top: 0;
+      }
+
+      @media (max-width: $mobile) {
+        width: unset;
+        max-height: 450px;
+      }
+    }
+
+    .union {
+      .couple {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        z-index: 10;
+
+        &.view {
+          display: none;
+        }
+
+        @media (max-width: $notebooks) {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          max-width: 600px;
+        }
+
+        @media (max-width: $tablet) {
+          max-width: 500px;
+          max-height: 500px;
+        }
+
+        @media (max-width: $mobile) {
+          display: none;
+
+          max-height: 260px;
+          max-width: 250px;
+
+          right: 50%;
+          transform: translateX(50%);
+          width: 100%;
+
+          &.view {
+            display: flex;
+          }
+        }
+      }
+    }
+
+    @media (max-width: $tablet) {
+      width: 100%;
+      text-align: center;
+    }
+
+    h3 {
+      font-size: 22px;
+      color: $w;
+      font-weight: 500;
+      margin-bottom: 20px;
+      max-width: 270px;
+
+      @media (max-width: $notebooks) {
+        max-width: 380px;
+        font-size: 20px;
+      }
+
+      @media (max-width: $mobile) {
+        font-size: 16px;
+      }
+    }
+  }
+}

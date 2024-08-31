@@ -1,59 +1,61 @@
 @font-face {
   font-family: "cf";
-  src: url("CoFoSans-Bold.eot");
-  src: local("CoFo Sans Bold"), local("CoFoSans-Bold"),
-    url("CoFoSans-Bold.eot?#iefix") format("embedded-opentype"),
-    url("CoFoSans-Bold.woff2") format("woff2"),
-    url("CoFoSans-Bold.woff") format("woff"),
-    url("CoFoSans-Bold.ttf") format("truetype");
+  src: url("../../fonts/CoFoSans-Bold.eot");
+  src: local("../../fonts/CoFo Sans Bold"), local("../../fonts/CoFoSans-Bold"),
+    url("../../fonts/CoFoSans-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../../fonts/CoFoSans-Bold.woff2") format("woff2"),
+    url("../../fonts/CoFoSans-Bold.woff") format("woff"),
+    url("../../fonts/CoFoSans-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: "cf";
-  src: url("CoFoSans-Black.eot");
-  src: local("CoFo Sans Black"), local("CoFoSans-Black"),
-    url("CoFoSans-Black.eot?#iefix") format("embedded-opentype"),
-    url("CoFoSans-Black.woff2") format("woff2"),
-    url("CoFoSans-Black.woff") format("woff"),
-    url("CoFoSans-Black.ttf") format("truetype");
+  src: url("../../fonts/CoFoSans-Black.eot");
+  src: local("../../fonts/CoFo Sans Black"), local("../../fonts/CoFoSans-Black"),
+    url("../../fonts/CoFoSans-Black.eot?#iefix") format("embedded-opentype"),
+    url("../../fonts/CoFoSans-Black.woff2") format("woff2"),
+    url("../../fonts/CoFoSans-Black.woff") format("woff"),
+    url("../../fonts/CoFoSans-Black.ttf") format("truetype");
   font-weight: 900;
   font-style: normal;
 }
 
 @font-face {
   font-family: "cf";
-  src: url("CoFoSans-Regular.eot");
-  src: local("CoFo Sans"), local("CoFoSans-Regular"),
-    url("CoFoSans-Regular.eot?#iefix") format("embedded-opentype"),
-    url("CoFoSans-Regular.woff2") format("woff2"),
-    url("CoFoSans-Regular.woff") format("woff"),
-    url("CoFoSans-Regular.ttf") format("truetype");
+  src: url("../../fonts/CoFoSans-Regular.eot");
+  src: local("CoFo Sans"), local("../../fonts/CoFoSans-Regular"),
+    url("../../fonts/CoFoSans-Regular.eot?#iefix") format("embedded-opentype"),
+    url("../../fonts/CoFoSans-Regular.woff2") format("woff2"),
+    url("../../fonts/CoFoSans-Regular.woff") format("woff"),
+    url("../../fonts/CoFoSans-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "cf";
-  src: url("CoFoSans-Medium.eot");
-  src: local("CoFo Sans Medium"), local("CoFoSans-Medium"),
-    url("CoFoSans-Medium.eot?#iefix") format("embedded-opentype"),
-    url("CoFoSans-Medium.woff2") format("woff2"),
-    url("CoFoSans-Medium.woff") format("woff"),
-    url("CoFoSans-Medium.ttf") format("truetype");
+  src: url("../../fonts/CoFoSans-Medium.eot");
+  src: local("CoFo Sans Medium"), local("../../fonts/CoFoSans-Medium"),
+    url("../../fonts/CoFoSans-Medium.eot?#iefix") format("embedded-opentype"),
+    url("../../fonts/CoFoSans-Medium.woff2") format("woff2"),
+    url("../../fonts/CoFoSans-Medium.woff") format("woff"),
+    url("../../fonts/CoFoSans-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: "cf";
-  src: url("CoFoRobert-RegularItalic.eot");
-  src: local("CoFo Robert Italic"), local("CoFoRobert-RegularItalic"),
-    url("CoFoRobert-RegularItalic.eot?#iefix") format("embedded-opentype"),
-    url("CoFoRobert-RegularItalic.woff2") format("woff2"),
-    url("CoFoRobert-RegularItalic.woff") format("woff"),
-    url("CoFoRobert-RegularItalic.ttf") format("truetype");
+  src: url("../../fonts/CoFoRobert-RegularItalic.eot");
+  src: local("CoFo Robert Italic"),
+    local("../../fonts/CoFoRobert-RegularItalic"),
+    url("../../fonts/CoFoRobert-RegularItalic.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../fonts/CoFoRobert-RegularItalic.woff2") format("woff2"),
+    url("../../fonts/CoFoRobert-RegularItalic.woff") format("woff"),
+    url("../../fonts/CoFoRobert-RegularItalic.ttf") format("truetype");
   font-weight: normal;
   font-style: italic;
 }

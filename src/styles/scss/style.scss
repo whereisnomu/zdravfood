@@ -180,7 +180,7 @@ body {
 
   .modal-content {
     position: relative;
-    background-color: $blue;
+    background-color: $w;
     margin: 0 auto;
     margin-top: 100px;
     padding: 30px 30px 40px 30px;
@@ -191,6 +191,31 @@ body {
     max-width: 450px;
     animation-name: slideIn;
     animation-duration: 0.4s;
+
+    label.label {
+      font-size: 14px;
+      color: $grey;
+      display: flex;
+      //   margin-top: 10px;
+      max-width: 410px;
+      margin-bottom: 15px;
+
+      input.checkbox {
+        max-width: unset;
+        width: 22px;
+        margin-right: 10px;
+        border-radius: 20px;
+        border: unset;
+        color: $black;
+        font-size: unset;
+        padding: unset;
+      }
+
+      a {
+        color: $red;
+        text-decoration: underline;
+      }
+    }
 
     .close {
       color: #aaa;
@@ -228,14 +253,14 @@ body {
         h3 {
           font-size: 20px;
           font-weight: 500;
-          color: $w;
+          color: $grey;
           max-width: 380px;
           margin-bottom: 10px;
         }
 
         h4 {
           font-size: 15px;
-          color: $w;
+          color: $grey;
           margin-bottom: 30px;
         }
 
@@ -244,17 +269,23 @@ body {
           flex-direction: column;
           gap: 10px;
           margin-bottom: 20px;
-          color: $w;
+          color: $grey;
 
           input {
-            color: $w;
+            border: 1px solid $border;
+            color: $grey;
             font-size: 15px;
+
+            &::placeholder {
+              color: $grey;
+              font-size: 14px;
+            }
           }
         }
 
         .button {
-          background-color: $w;
-          color: $blue;
+          background-color: $red;
+          color: $w;
           font-size: 15px;
           font-weight: 500;
         }
